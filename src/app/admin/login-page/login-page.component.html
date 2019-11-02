@@ -9,6 +9,13 @@
     </div>
 
     <div
+        *ngIf="message"
+        class="alert alert-danger"
+    >
+        {{message}}
+    </div>
+
+    <div
         [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
         class="form-control">
         <label for="email">Email</label>
