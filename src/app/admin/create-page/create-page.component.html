@@ -13,8 +13,15 @@
         </div>
     </div>
 
-    <div class="form-control">
+    <div class="form-control"
+         [ngClass]="{invalid: form.get('text').touched && form.get('text').invalid}">
         <label>Post content...</label>
+        <quill-editor formControlName="text"></quill-editor>
+        <div
+            *ngIf="form.get('text').touched && form.get('text').invalid"
+            class="validation">
+            <small *ngIf="form.get('text').errors.required">field must be filled</small>
+        </div>
     </div>
 
     <div
