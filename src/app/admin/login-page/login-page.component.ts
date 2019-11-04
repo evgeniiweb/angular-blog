@@ -19,11 +19,11 @@ export class LoginPageComponent implements OnInit {
       public auth: AuthService,
       private router: Router,
       private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
-      if (params['loginAgain']) {
+      if (params.loginAgain) {
         this.message = 'please enter data';
       }
     });

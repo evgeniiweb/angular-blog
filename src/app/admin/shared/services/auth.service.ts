@@ -34,7 +34,7 @@ export class AuthService {
         this.setToken(null);
     }
 
-    isAuthenticatited(): boolean {
+    isAuthenticated(): boolean {
         return !!this.token;
     }
 
@@ -58,8 +58,7 @@ export class AuthService {
 
     private setToken(response: FirebaseAuthResponse | null) {
         if (response) {
-            console.log(response);
-            const expDate = new Date(new Date().getDate() + +response.expiresIn * 1000);
+            const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);
             localStorage.setItem('fb-token', response.idToken);
             localStorage.setItem('fb-token-exp', expDate.toString());
         } else {
