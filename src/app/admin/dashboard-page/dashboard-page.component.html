@@ -17,7 +17,7 @@
             <td>{{index + 1}}</td>
             <td>{{post.author}}</td>
             <td>{{post.title}}</td>
-            <td>{{post.date | date:'medium'}}</td>
+            <td>{{post.date | date:'medium':null:'en'}}</td>
             <td>
                 <button
                     [routerLink]="['/admin', 'post', post.id, 'edit']"
